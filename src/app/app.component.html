@@ -5,13 +5,29 @@
 <button mat-button [mat-menu-trigger-for]="appMenu"><mat-icon>menu</mat-icon> Menu</button>
 </mat-toolbar>
 <mat-menu #appMenu="matMenu">
-<button mat-menu-item > Settings </button>
-<button mat-menu-item> Contact </button>
+  <button mat-menu-item [routerLink] = "['/']">
+       <mat-icon>fingerprint</mat-icon>
+       <span>Login</span>
+     </button>
+     <button mat-menu-item [routerLink] = "['/aboutMe']">
+       <mat-icon>person</mat-icon>
+       <span>About Me</span>
+     </button>
+     <button mat-menu-item disabled>
+       <mat-icon><i class="material-icons">contact_mail</i></mat-icon>
+       <span>Contact Me</span>
+     </button>
+
 </mat-menu>
 
+<div class="mainContent">
+
+    <div class="smallBlocks content"><router-outlet></router-outlet></div>
+      <div class="smallBlocks">three</div>
+</div>
 
   <span class="done">
     <button mat-fab>
-      <mat-icon>check circle</mat-icon>
+      <mat-icon [routerLink] = "['/']">check circle</mat-icon>
     </button>
   </span>

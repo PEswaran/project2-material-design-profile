@@ -1,0 +1,11 @@
+<mat-selection-list #shoes class="selection-content-list">
+  <mat-list-option class="list-item" *ngFor="let shoe of typesOfShoes" (click)="toggleRow(shoe)" >
+ {{shoe}}
+  </mat-list-option>
+</mat-selection-list>
+<p>
+  Options selected: {{shoes.selectedOptions.selected.length}}
+  </p>
+<div *ngFor="let goal of selectedGoals">
+  {{goal}}
+ </div>
